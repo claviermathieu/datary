@@ -269,22 +269,32 @@ def end(t):
     print("OK/", (perf_counter() - t).seconds, "secondes")
 
 
-def presentation():
+def presentation(input_folder="Non initialisé"):
     title("A propos")
     describe([
-        "# Titre :\t Template de programme de transformation de données",
-        "# Crédentials :\t MClavier (mathieu.clavier@outlook.com)",
-        "\n\n# Objectifs : Définir l'objectif\n\n",
-        "---------------------------------------------------------------------------------------------------------",
-        "* Input :",
-        "\tBase de données issues de CGI",
-        "\t- file1.csv",
-        "\t- file2.csv",
-        "\t- file3.csv",
+        "# TITRE \t Template data application from datary",
+        "# CREDENTIALS \t MClavier (https://github.com/claviermathieu)",
+        
+        "\n\n# OBJECTIF",
+        "\tCe fichier fourni un fichier template permettant de plus rapidement se mettre au travail tout",
+        "\ten ne négligeant pas la forme lors de projet professionnel.\n\n",
+        
+        "# OUTILS INTERMEDIAIRES",
+        "\tCe paragraphe peut être utile pour expliciter les autres outils utilisés dans la dataline :",
+        "\t- 01. Convertisseur xlsx to csv",
+        "\t- 02. Contrôle ...\n\n\n",
 
-        "* Output :",
-        "\t- output.csv \t fichier contenant tous les contrats du scope",
+        "---------------------------------------------------------------------------------------------------------",
+        "* Inputs :",
+        "\tLe dossier input doit contenir uniquement des dossiers contenant eux les données. Chaque",
+        "\tsous-dossier représente une version du jeu de données, par exemple par date...",
+        "\t* sous-dossier ",
+        "\t\t- data.csv \t\t base de données initiale",
+
+        "\n* Outputs :",
+        "\t- data_clean.xlsx \t mon fichier output",
         "---------------------------------------------------------------------------------------------------------",
         ""
     ])
     pause()
+    return input_folder
