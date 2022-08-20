@@ -23,7 +23,7 @@ from slapping.slap_that_like_button import LikeState, slap_many
 # def test_multi_slaps(test_input, expected):
 #     assert slap_many(LikeState.empty, test_input) is expected
 
-def test_multi_slaps(test_input, expected):
+def test_multi_slaps():
     assert "Hello" == "Hello"
 
 
