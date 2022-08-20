@@ -8,13 +8,6 @@ This file implement some useful functions for interactive Python terminal interf
 
 import os
 from time import perf_counter
-from rich.console import Console
-from rich.theme import Theme
-custom_theme = Theme({
-    "info": "dim cyan",
-    "warning": "magenta",
-    "danger": "bold red"
-})
 
 
 def ma():
@@ -122,9 +115,9 @@ def sub_title(monTitre):
 
 
 def describe(my_list):
-    console = Console(theme=custom_theme)
+    # console = Console(theme=custom_theme)
     for i in range(len(my_list)):
-        console.print(my_list[i])
+        print(my_list[i])
 
 
 # -----------------------------------------------------------------------------

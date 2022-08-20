@@ -13,23 +13,32 @@ import pandas as pd
 
 # ------------- import datary ---------------
 # import datary.interface as gi
-# from datary.excel import ExcelFile
-# ------------- specific import during devlpt ---------------
-from importlib.machinery import SourceFileLoader
-gi = SourceFileLoader("gi", "../src/datary/interface.py").load_module()
-excel = SourceFileLoader("excel", "../src/datary/excel.py").load_module()
+# import datary.excel as excel
 
+# ------------- specific import during devlpt ---------------
+import importlib.util
+MODULE_PATH = "C:\\Users\\mathi\\OneDrive\\PROFESSIONNEL\\____cours____\\__travaux__\\Projets\\datary\\src\\datary\\interface.py"
+MODULE_NAME = "interface"
+spec = importlib.util.spec_from_file_location(MODULE_NAME, MODULE_PATH)
+gi = importlib.util.module_from_spec(spec)
+spec.loader.exec_module(gi)
+MODULE_PATH = "C:\\Users\\mathi\\OneDrive\\PROFESSIONNEL\\____cours____\\__travaux__\\Projets\\datary\\src\\datary\\excel.py"
+MODULE_NAME = "excel"
+spec = importlib.util.spec_from_file_location(MODULE_NAME, MODULE_PATH)
+excel = importlib.util.module_from_spec(spec)
+spec.loader.exec_module(excel)
 
 # -----------------------------------------------------------------------------
 # Overwrite presentation function
 # -----------------------------------------------------------------------------
 
+
 def presentation():
     gi.title("A propos")
     gi.describe([
-        "# Titre :\t Template de programme de transformation de données",
-        "# Crédentials :\t MClavier (mathieu.clavier@outlook.com)",
-        "\n\n# Objectifs : Définir l'objectif\n\n",
+        "# TITRE :\t Template de programme de transformation de donnees",
+        "# CREDENTIALS :\t MClavier (mathieu.clavier@outlook.com)",
+        "\n\n# Objectifs : Definir l'objectif\n\n",
         "---------------------------------------------------------------------------------------------------------",
         "* Input :",
         "\tBase de données issues de CGI",
@@ -48,11 +57,18 @@ def presentation():
 # Execution script
 # -----------------------------------------------------------------------------
 
+
 if __name__ == "__main__":
     presentation()
+    print("bonjour")
+    gi.describe(["test"])
+
+    # gi.presentation("test")
+
+    # gi.presentation = presentation
 
 
-gi.presentation = presentation
+
 
 def other():
     DEV_MODE = 1
