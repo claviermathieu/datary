@@ -1,4 +1,4 @@
-""" Genereic FR interface
+""" Generic FR interface
 
 This file implement some useful functions for interactive Python terminal interface.
 """
@@ -7,7 +7,7 @@ This file implement some useful functions for interactive Python terminal interf
 # Distributed for personnal use
 
 import os
-from time import perf_counter
+from time import perf_countere  
 
 
 def ma():
