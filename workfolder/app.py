@@ -7,18 +7,21 @@ This file is a test file of datary modules
 # Distributed for personnal use
 # Test template for datary package
 
+
+# -----------------------------------------------------------------------------
+# Packages
+# -----------------------------------------------------------------------------
+
 # Packages
 import os
 import pandas as pd
-
-# ------------- import datary ---------------
 # import datary.interface as gi
 # import datary.excel as excel
 
-# ------------- specific import during devlpt ---------------
+# ------------- specific import because of devlpt ---------------
 import importlib.util
-MODULE_PATH = "C:\\Users\\mathi\\OneDrive\\PROFESSIONNEL\\____cours____\\__travaux__\\Projets\\datary\\src\\datary\\interface.py"
-MODULE_NAME = "interface"
+MODULE_PATH = "C:\\Users\\mathi\\OneDrive\\PROFESSIONNEL\\____cours____\\__travaux__\\Projets\\datary\\src\\datary\\generic_interface.py"
+MODULE_NAME = "generic_interface"
 spec = importlib.util.spec_from_file_location(MODULE_NAME, MODULE_PATH)
 gi = importlib.util.module_from_spec(spec)
 spec.loader.exec_module(gi)
@@ -33,6 +36,9 @@ spec = importlib.util.spec_from_file_location(MODULE_NAME, MODULE_PATH)
 utils = importlib.util.module_from_spec(spec)
 spec.loader.exec_module(utils)
 
+
+
+gi.get_input_folder()
 
 # -----------------------------------------------------------------------------
 # Overwrite presentation function
@@ -68,9 +74,18 @@ def presentation(input_folder="Non initialisé"):
     gi.pause()
     return input_folder
 
+
+gi.presentation = presentation
 # -----------------------------------------------------------------------------
 # Execution script
 # -----------------------------------------------------------------------------
+
+gi.presentation()
+
+
+
+
+
 
 
 if __name__ == "__main__":
@@ -79,14 +94,8 @@ if __name__ == "__main__":
     # Overwrite presentation function for specific comment
     gi.presentation = presentation
     gi.menu_principal(ivars)
-    # gi.presentation()
-    # Start specific code for the project
-    # main()
 
-    # gi.presentation("test")
-
-    # gi.presentation = presentation
-
+    
 
 # -----------------------------------------------------------------------------
 # Execution script
@@ -195,6 +204,3 @@ def other():
         os.startfile('output')
         input("\n\n# Fermeture du programme. Entrer pour continuer > ")
 
-
-def test():
-    print("test")
