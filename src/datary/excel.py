@@ -3,7 +3,7 @@ import re
 import pandas as pd
 
 
-class ExcelReader():
+class ExcelFile():
 
     def __init__(self, filepath: str) -> None:
         self.filepath = filepath
