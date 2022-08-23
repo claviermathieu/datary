@@ -7,7 +7,7 @@ This file implement some useful functions for interactive Python terminal interf
 # Distributed for personnal use
 
 import os
-from time import perf_countere  
+from time import perf_counter
 
 
 def ma():
