@@ -1,4 +1,4 @@
-"""A simple template""" 
+"""A simple template"""
 
 # Copyright (c) MClavier (mathieu.clavier@outlook.com - https://github.com/claviermathieu).
 # Distributed for personnal use
@@ -7,14 +7,9 @@
 # Packages
 # -----------------------------------------------------------------------------
 
-import os
+# import os
 import pandas as pd
-import importlib.util
-MODULE_PATH = "C:\\Users\\mathi\\OneDrive\\PROFESSIONNEL\\____cours____\\__travaux__\\Projets\\datary\\src\\datary\\generic_interface.py"
-MODULE_NAME = "generic_interface"
-spec = importlib.util.spec_from_file_location(MODULE_NAME, MODULE_PATH)
-gi = importlib.util.module_from_spec(spec)
-spec.loader.exec_module(gi)
+import datary.interface as gi
 
 # -----------------------------------------------------------------------------
 # Start program
@@ -23,7 +18,7 @@ spec.loader.exec_module(gi)
 gi.title('Mon programme')
 
 gi.describe([
-    "Etape 1 : assurez-vous que le fichier :", 
+    "Etape 1 : assurez-vous que le fichier :",
     "\t- input.csv"
     ])
 
@@ -52,6 +47,3 @@ gi.end(t)
 # -----------------------------------------------------------------------------
 
 # Create folder
-
-
-df.to_csv("")
